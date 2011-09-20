@@ -41,48 +41,59 @@
   <article class="box-shadow-6-1">
   
     <div class="container clearfix">
-      <h2>St.eeze/base.html</h2>
-      <p class="sub-heading">Learn more about the base elements of my HTML5 website boilerplate.</p>
+      <h2>St.eeze/base/base.css</h2>
+      <p class="sub-heading">Learn more about the CSS included with my HTML5 website boilerplate.</p>
   
       <div id="files">
       
-        <p>This is a line-by-line glance at what&rsquo;s inside of base.html and why it&rsquo;s been included.</p>
+        <p>This is a glance at what&rsquo;s inside of base.css and why it&rsquo;s been included. The file is pretty well documented in the comments, but here are some of the highlights.</p>
         
-        <h4><a href="https://github.com/cousinwil/St.eeze/blob/master/base.html">St.eeze/base.html</a> (lines 1-7)</h4>
+        <h4><a href="https://github.com/cousinwil/St.eeze/blob/master/base/base.css">St.eeze/base/base.css</a> (lines 1-113)</h4>
+                
+        <p>The first section of this file is the <a href="http://html5doctor.com/html-5-reset-stylesheet/">HTML5 Doctor Reset Stylesheet</a>, a version of <a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&rsquo;s CSS reset</a> which was modified for use with HTML5 by Richard Clark.</p>
         
-        <script src="https://gist.github.com/1213174.js?file=gistfile1.html"></script>
-        
-        <p>Here we start off in line 1 by setting the doctype to HTML5, which is much more simple than things were in the XHTML days. Then, in line 2, we include a blank IE conditional which fixes a bug that causes IE to load only one file at a time.</p>
+        <h4><a href="https://github.com/cousinwil/St.eeze/blob/master/base/base.css">St.eeze/base/base.css</a> (lines 114-135)</h4>
   
-        <p>In lines 3-7 we have IE conditionals assigning an ".ie" class to the HTML tag in all IE browsers while also inserting classes based on the version number. Using this one can use .ie6, .ie7, .ie8, .ie9, and .ie to define alternate styles for problem browsers. This is a super-useful technique I've been using for quite some time, now. It was explained pretty well by <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/">Paul Irish</a>.</p>
+        <script src="https://gist.github.com/1228181.js?file=gistfile1.css"></script>
         
-        <h4><a href="https://github.com/cousinwil/St.eeze/blob/master/base.html">St.eeze/base.html</a> (lines 8-22)</h4>
-  
-        <script src="https://gist.github.com/1213183.js?file=gistfile1.html"></script>
+        <p>Next come a few tweaks. First, we remove the default list style types which the reset doesn&rsquo;t. It's a personal preference, but I find myself using lists without style more often than with them. Next, we&rsquo;ve added two alternate hr treatments so that you can use a solid, dashed, or dotted styled horizontal rules. Finally I set the opacity of the body to 99.9% to fix a common, and annoying, text flicker that happens during JavaScript animations.</p>
         
-        <p>Here we open up the head tag and then define charset to specify utf-8 <a href="http://www.w3.org/International/O-HTTP-charset">character encoding of the document</a>.</p>
-  
-        <p>Then, on line 3 (line 10 in the actual base.html file) we <a href="http://www.alistapart.com/articles/beyonddoctype">specify the rendering engine</a> and that we want IE to use <a href="http://www.chromium.org/developers/how-tos/chrome-frame-getting-started">Chrome Frame</a>, if present.</p>
-  
-        <p>Lastly I took the common meta tags (title on line 7 with description, copyright, and author on lines 13-15) and combined them with the Open Graph Protocol meta tags which are used for the ubiquitous facebook like button. I need this bit of code almost all the time, but if I don't need it I delete it.</p>
+        <h4><a href="https://github.com/cousinwil/St.eeze/blob/master/base/base.css">St.eeze/base/base.css</a> (lines 144-160)</h4>
+
+        <script src="https://gist.github.com/1228202.js?file=gistfile1.css"></script>
         
-        <h4><a href="https://github.com/cousinwil/St.eeze/blob/master/base.html">St.eeze/base.html</a> (lines 24-34)</h4>
+        <p>Next, we add several useful styles which can make life easier...</p>
         
-        <script src="https://gist.github.com/1213325.js?file=gistfile1.html"></script>
+        <ol>
+          <li><strong>.offset</strong> is useful in making text which may be in an image available to screen readers and spiders. This way, when CSS is used the image is displayed, but when CSS is not available the text is still available. A simple example of how this is used can be seen in the header for this site. Here I have an anchor tag with CSS applied to it, and within that is a span with the class offset containing the text we want displayed to screen readers and bots.</li>
+          <li><strong>.ellipsis</strong> adds and ellipsis to the end of truncated/overflow text, where available by browser.</li>
+          <li><strong>.link</strong> gives the pointer-finger cursor to elements. This is useful when you have a click event attached via a JavaScript click event.</li>
+        </ol>
         
-        <p>Here we close out the head tag after calling <a href="https://github.com/cousinwil/St.eeze/blob/master/base/base.css">St.eeze/base/base.css</a>, some shortcut icon declarations, and the HTML5shiv.</p> 
-  
-        <p>Then we open the body tag. After this, starting on line 35, it's time to work your magic... </p>
+        <h4><a href="https://github.com/cousinwil/St.eeze/blob/master/base/base.css">St.eeze/base/base.css</a> (lines 192-220)</h4>
+
+        <script src="https://gist.github.com/1228263.js?file=gistfile1.css"></script>
         
-        <h4><a href="https://github.com/cousinwil/St.eeze/blob/master/base.html">St.eeze/base.html</a> (lines 38-62)</h4>
-  
-        <script src="https://gist.github.com/1213350.js?file=gistfile1.html"></script>
+        <p>Add this class to a containing element which has floated elements within it. Much cleaner than adding additional elements which clear floats and more straightforward than ensuring you&rsquo;re clearing all your floats properly in your CSS. This is an extended version of <a href="http://csscreator.com/attributes/containedfloat.php">Tony Aslett&rsquo;s contained float</a> post from 2004.</p>
         
-        <p>The rest of this template from line 62 on goes below your page template. Javascript should be loaded at the bottom of the page for best performance.</p>
-  
-        <p>Then we include jQuery and <a href="https://github.com/cousinwil/St.eeze/blob/master/base/base.js">St.eeze/base/base.js</a> before initializing our functions. I'll talk about this more in the base.js gists, but basically what I've set up here are some simple on ready and load functions. The .load function is contained in a minimal timeout to ensure the browser spinner stops before actions like background loading images cause it to continue rather than running silently. Within this function you'll also find a .resize and .scroll function for events that you want to bind as the screen changes. Perhaps you need to reposition an absolutely positioned element or show alternate navigation once the window is scrolled below the header. This is where you'd bind such a thing. It's also another place where you remove things you don't need...</p>
-  
-        <p>After that, we close our body and html tags and call it a day. Rock.</p>
+        <h4><a href="https://github.com/cousinwil/St.eeze/blob/master/base/base.css">St.eeze/base/base.css</a> (lines 234-244)</h4>
+
+        <script src="https://gist.github.com/1228284.js?file=gistfile1.css"></script>
+        
+        <p>These classes use the <a href="http://www.css3files.com/border/#borderradius">CSS3 border-radius</a> declaration to give you a 4 pixel or 8 pixel rounded corner on a given element. Edit these to get your desired curve.</p>
+        
+        <h4><a href="https://github.com/cousinwil/St.eeze/blob/master/base/base.css">St.eeze/base/base.css</a> (lines 250-266)</h4>
+
+        <script src="https://gist.github.com/1228293.js?file=gistfile1.css"></script>
+        
+        <p>These classes give you a couple variations of the <a href="http://www.css3files.com/shadow/#boxshadow">CSS3 box-shadow</a> declaration. Edit the values to get the desired look. IMHO, less is more...</p>
+        
+        
+        <h4><a href="https://github.com/cousinwil/St.eeze/blob/master/base/base.css">St.eeze/base/base.css</a> (lines 273-288)</h4>
+
+        <script src="https://gist.github.com/1228297.js?file=gistfile1.css"></script>
+        
+        <p>These classes give you a template for creating a vertical or horizontal background gradient using the browser specific <a href="http://www.css3files.com/gradient/">CSS3 linear-gradient</a> backgrounds.</p>
       
       </div>
             
